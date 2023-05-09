@@ -1,25 +1,18 @@
-let myScores = [92, 98, 84, 76, 89, 99, 100];
-let yourScores = [82, 98, 94, 88, 92, 100, 100];
-
-let numMyScores = myScores.length;
-    for(let i = 0; i<numMyScores; i++) {
-        console.log(myScores[i]);
+function getAverage(scores) {
+    let sum = 0
+    let numScores = scores.length;
+    for(let i = 0; i < numScores; i++) {
+        sum += scores[i].score;
     }
-
-let numYourScores = yourScores.length;
-    for(let i = 0; i<numYourScores; i++) {
-        console.log(yourScores[i]);
-    }
-
-function getMyAverage() {
-    let myScoresAverage = ((myScores[0] + myScores [1] + myScores [2] + myScores [3] + myScores [4] + myScores [5] + myScores [6]) / myScores.length)
-    console.log(myScoresAverage.toFixed(2))
+    return sum;
 }
 
-function getYourAverage() {
-    let yourScoresAverage = ((yourScores[0] + yourScores [1] + yourScores [2] + yourScores [3] + yourScores [4] + yourScores [5] + yourScores [6]) / yourScores.length)
-    console.log(yourScoresAverage.toFixed(2))
-}
+let myScores = [{score: 92}, {score: 98}, {score: 84}, {score: 76}, {score: 89}, {score: 99}, {score: 100}];
+let yourScores = [{score: 82}, {score: 98}, {score: 94}, {score: 88}, {score: 92}, {score: 100}, {score: 100}];
 
-console.log(getMyAverage())
-console.log(getYourAverage())
+let average = getAverage(myScores);
+let totalAverage = (average / 7);
+console.log("My score average was a " + totalAverage.toFixed(2));
+average = getAverage(yourScores);
+totalAverage = (average / 7);
+console.log("Your score average was a " + totalAverage.toFixed(2));
